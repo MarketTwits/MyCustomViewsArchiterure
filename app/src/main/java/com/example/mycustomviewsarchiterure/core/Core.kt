@@ -2,10 +2,12 @@ package com.example.mycustomviewsarchiterure.core
 
 import android.content.Context
 import com.example.mycustomviewsarchiterure.main.NavigationCommunication
+import com.example.mycustomviewsarchiterure.settings.presentation.SettingsChangedCommunication
 
 class Core(private val context: Context
-) : ProvideNavigation, ProvideStorage, ProvideManageResource {
+) : ProvideNavigation, ProvideStorage, ProvideManageResource, ProvideSettingsChangedCommunication {
 
+    private val settingsChanged = SettingsChangedCommunication.Base()
     private val navigation = NavigationCommunication.Base()
     private val manageResource = ManageResource.Base(context)
     private val storage =
@@ -16,6 +18,9 @@ class Core(private val context: Context
     }
 
     override fun storage(): Storage = storage
+    override fun settingsChanged(): SettingsChangedCommunication.Mutable {
+        return settingsChanged
+    }
 
     companion object {
         private const val STORAGE_NAME = "NEWS APP DATA"
@@ -33,4 +38,7 @@ interface ProvideStorage {
 }
 interface ProvideManageResource{
     fun manageResource() : ManageResource
+}
+interface ProvideSettingsChangedCommunication{
+    fun settingsChanged() : SettingsChangedCommunication.Mutable
 }

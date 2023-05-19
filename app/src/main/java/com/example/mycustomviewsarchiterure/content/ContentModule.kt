@@ -3,7 +3,6 @@ package com.example.mycustomviewsarchiterure.content
 import com.example.mycustomviewsarchiterure.content.data.ContentCloudDataSource
 import com.example.mycustomviewsarchiterure.content.data.LoadingModeCache
 import com.example.mycustomviewsarchiterure.content.data.MakeNewsService
-import com.example.mycustomviewsarchiterure.content.data.NewsService
 import com.example.mycustomviewsarchiterure.content.domain.BaseContentRepository
 import com.example.mycustomviewsarchiterure.content.domain.ContentInteractor
 import com.example.mycustomviewsarchiterure.content.domain.HandleError
@@ -12,7 +11,6 @@ import com.example.mycustomviewsarchiterure.content.presentation.ContentCommunic
 import com.example.mycustomviewsarchiterure.content.presentation.ContentViewModel
 import com.example.mycustomviewsarchiterure.core.Core
 import com.example.mycustomviewsarchiterure.core.DispatchersList
-import com.example.mycustomviewsarchiterure.core.ManageResource
 import com.example.mycustomviewsarchiterure.core.Module
 
 class ContentModule(private val core: Core) : Module<ContentViewModel> {
@@ -28,13 +26,14 @@ class ContentModule(private val core: Core) : Module<ContentViewModel> {
 
         return ContentViewModel(
             ContentCommunication.Base(),
-            loadingModeCache,
             DispatchersList.Base(),
             ContentInteractor.Base(
                 repository,
                 handleErrorDomain,
                 newsUiMapper
-            )
+            ),
+            core.settingsChanged(),
+            core.navigation()
         )
     }
 }

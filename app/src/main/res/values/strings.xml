@@ -5,4 +5,5 @@
     <string name="how_to_load_images">How to load images</string>
     <string name="no_connection_exception">No internet connection</string>
     <string name="service_unavaliable">"Something wrong "</string>
+    <string name="settings">settings</string>
 </resources>
