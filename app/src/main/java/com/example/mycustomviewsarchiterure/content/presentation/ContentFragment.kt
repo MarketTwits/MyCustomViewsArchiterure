@@ -28,23 +28,16 @@ class ContentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val wifiOnlyRadioButton : RadioButton = view.findViewById(R.id.wifiOnlyRadioButton)
-        val alsoMobileRadioButton : RadioButton = view.findViewById(R.id.wifiPlusMobileSourceRadioButton)
         val recyclerView : RecyclerView = view.findViewById(R.id.recyclerView)
         val adapter = NewsAdapter()
 
-        wifiOnlyRadioButton.setOnClickListener {
-            viewModel.choseWifiOnly()
-        }
-        alsoMobileRadioButton.setOnClickListener {
-            viewModel.chooseAlsoMobile()
-        }
-
         recyclerView.adapter = adapter
         viewModel.observe(this,  Observer{
-            it.showChoice(wifiOnlyRadioButton, alsoMobileRadioButton)
             it.showNews(adapter)
         })
+        viewModel.observeSettingChanged(this){
+            viewModel.load()
+        }
         viewModel.init(savedInstanceState == null)
 
     }

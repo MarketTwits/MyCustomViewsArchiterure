@@ -27,8 +27,8 @@ class ContentModule(private val core: Core) : Module<ContentViewModel> {
         val newsUiMapper = NewsUiMapper.Base(loadingModeCache)
 
         return ContentViewModel(
+            core.settingsChangedCommunication(),
             ContentCommunication.Base(),
-            loadingModeCache,
             DispatchersList.Base(),
             ContentInteractor.Base(
                 repository,
