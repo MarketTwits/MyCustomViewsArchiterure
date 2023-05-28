@@ -30,6 +30,9 @@ class ContentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView : RecyclerView = view.findViewById(R.id.recyclerView)
         val adapter = NewsAdapter()
+        view.findViewById<View>(R.id.settingsButton).setOnClickListener {
+            viewModel.showSettings()
+        }
 
         recyclerView.adapter = adapter
         viewModel.observe(this,  Observer{

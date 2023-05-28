@@ -5,10 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent">
-    <com.example.mycustomviewsarchiterure.content.settings.SettingsCustomView
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:text="@string/settings"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

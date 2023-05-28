@@ -7,13 +7,16 @@ import androidx.lifecycle.viewModelScope
 import com.example.mycustomviewsarchiterure.content.data.LoadingModeCache
 import com.example.mycustomviewsarchiterure.content.domain.ContentInteractor
 import com.example.mycustomviewsarchiterure.content.settings.SettingsChangedCommunication
+import com.example.mycustomviewsarchiterure.content.settings.SettingsScreen
 import com.example.mycustomviewsarchiterure.core.Communication
 import com.example.mycustomviewsarchiterure.core.DispatchersList
 import com.example.mycustomviewsarchiterure.core.Init
+import com.example.mycustomviewsarchiterure.main.NavigationCommunication
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ContentViewModel(
+    private val navigationCommunication: NavigationCommunication.Update,
     private val settingsChangedCommunication: SettingsChangedCommunication.Observe,
     private val communication : ContentCommunication,
     private val dispatchersList: DispatchersList,
@@ -37,6 +40,9 @@ class ContentViewModel(
     }
     fun observeSettingChanged(owner: LifecycleOwner, observer : Observer<Boolean>) =
         settingsChangedCommunication.observe(owner, observer)
+    fun showSettings(){
+        navigationCommunication.map(SettingsScreen)
+    }
 }
 interface Load{
     fun load()
