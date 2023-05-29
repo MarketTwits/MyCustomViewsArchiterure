@@ -1,8 +1,8 @@
 package com.example.mycustomviewsarchiterure.content.domain
 
-import com.example.mycustomviewsarchiterure.content.presentation.ContentCommunication
-import com.example.mycustomviewsarchiterure.content.presentation.ContentUiState
-import com.example.mycustomviewsarchiterure.content.presentation.NewsUi
+import com.example.mycustomviewsarchiterure.content.content.ContentCommunication
+import com.example.mycustomviewsarchiterure.content.content.ContentUiState
+import com.example.mycustomviewsarchiterure.content.content.NewsUi
 
 interface ContentResult {
     fun map(communication: ContentCommunication)

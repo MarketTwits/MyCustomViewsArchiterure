@@ -1,10 +1,9 @@
-package com.example.mycustomviewsarchiterure.content.presentation
+package com.example.mycustomviewsarchiterure.content.content
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView

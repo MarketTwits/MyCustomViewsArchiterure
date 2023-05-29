@@ -1,7 +1,6 @@
 package com.example.mycustomviewsarchiterure.content.settings
 
 import android.widget.RadioButton
-import com.example.mycustomviewsarchiterure.content.presentation.ContentUiState
 
 interface SettingUiState {
     fun showChoice(wifiOnlyRadioButton: RadioButton, alsoMobileRadioButton: RadioButton) = Unit

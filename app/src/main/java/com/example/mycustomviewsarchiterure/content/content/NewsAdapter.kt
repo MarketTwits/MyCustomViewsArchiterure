@@ -1,11 +1,10 @@
-package com.example.mycustomviewsarchiterure.content.presentation
+package com.example.mycustomviewsarchiterure.content.content
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.mycustomviewsarchiterure.R

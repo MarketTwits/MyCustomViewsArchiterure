@@ -4,7 +4,6 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.example.mycustomviewsarchiterure.content.data.LoadingModeCache
-import com.example.mycustomviewsarchiterure.content.presentation.ContentUiState
 import com.example.mycustomviewsarchiterure.core.Communication
 
 class SettingViewModel(

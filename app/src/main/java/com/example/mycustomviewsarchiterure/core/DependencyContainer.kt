@@ -2,7 +2,9 @@ package com.example.mycustomviewsarchiterure.core
 
 import androidx.lifecycle.ViewModel
 import com.example.mycustomviewsarchiterure.content.ContentModule
-import com.example.mycustomviewsarchiterure.content.presentation.ContentViewModel
+import com.example.mycustomviewsarchiterure.content.category.ChooseCategoryModule
+import com.example.mycustomviewsarchiterure.content.category.presentation.ChooseCategoryViewModel
+import com.example.mycustomviewsarchiterure.content.content.ContentViewModel
 import com.example.mycustomviewsarchiterure.content.settings.SettingModule
 import com.example.mycustomviewsarchiterure.content.settings.SettingViewModel
 import com.example.mycustomviewsarchiterure.main.MainModule
@@ -23,6 +25,7 @@ interface DependencyContainer {
             MainViewModel::class.java -> MainModule(core)
             ContentViewModel::class.java -> ContentModule(core)
             SettingViewModel::class.java -> SettingModule(core)
+            ChooseCategoryViewModel::class.java -> ChooseCategoryModule(core)
             else -> dependencyContainer.module(className)
         }
     }

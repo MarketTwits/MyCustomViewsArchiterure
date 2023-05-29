@@ -1,4 +1,4 @@
-package com.example.mycustomviewsarchiterure.content.presentation
+package com.example.mycustomviewsarchiterure.content.content
 
 import com.example.mycustomviewsarchiterure.core.Communication
 

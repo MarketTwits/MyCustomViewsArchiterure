@@ -1,10 +1,9 @@
-package com.example.mycustomviewsarchiterure.content.presentation
+package com.example.mycustomviewsarchiterure.content.content
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mycustomviewsarchiterure.content.data.LoadingModeCache
 import com.example.mycustomviewsarchiterure.content.domain.ContentInteractor
 import com.example.mycustomviewsarchiterure.content.settings.SettingsChangedCommunication
 import com.example.mycustomviewsarchiterure.content.settings.SettingsScreen

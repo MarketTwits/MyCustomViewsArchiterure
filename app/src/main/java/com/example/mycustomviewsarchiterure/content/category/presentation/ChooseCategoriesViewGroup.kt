@@ -1,16 +1,17 @@
-package com.example.mycustomviewsarchiterure.content.settings
+package com.example.mycustomviewsarchiterure.content.category.presentation
 
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import android.widget.RadioButton
+import android.widget.LinearLayout
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.example.mycustomviewsarchiterure.R
+import com.example.mycustomviewsarchiterure.content.settings.SettingViewModel
 import com.example.mycustomviewsarchiterure.core.ProvideViewModel
 
-class SettingsCustomView : FrameLayout {
-    private lateinit var viewModel: SettingViewModel
+class ChooseCategoriesViewGroup : FrameLayout {
+    private lateinit var viewModel: ChooseCategoryViewModel
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
@@ -21,29 +22,19 @@ class SettingsCustomView : FrameLayout {
     )
 
     init {
-        inflate(context, R.layout.settings_view, this)
+        inflate(context, R.layout.choose_categories, this)
     }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-
         viewModel = (context.applicationContext as ProvideViewModel)
             .viewModel(
                 findViewTreeViewModelStoreOwner()!!,
-                SettingViewModel::class.java
+                ChooseCategoryViewModel::class.java
             )
-        val wifiOnlyRadioButton: RadioButton = findViewById(R.id.wifiOnlyRadioButton)
-        val alsoMobileRadioButton: RadioButton = findViewById(R.id.wifiPlusMobileSourceRadioButton)
-
-        wifiOnlyRadioButton.setOnClickListener {
-            viewModel.choseWifiOnly()
-        }
-        alsoMobileRadioButton.setOnClickListener {
-            viewModel.chooseAlsoMobile()
-        }
-
-        viewModel.observe(findViewTreeLifecycleOwner()!!) {
-            it.showChoice(wifiOnlyRadioButton, alsoMobileRadioButton)
+        val linearLayout = findViewById<LinearLayout>(R.id.categoriesContainerLayout)
+        viewModel.observe(findViewTreeLifecycleOwner()!!){
+            it.show(linearLayout)
         }
     }
 }

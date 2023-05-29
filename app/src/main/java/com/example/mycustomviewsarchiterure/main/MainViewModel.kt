@@ -3,7 +3,7 @@ package com.example.mycustomviewsarchiterure.main
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
-import com.example.mycustomviewsarchiterure.content.presentation.ContentScreen
+import com.example.mycustomviewsarchiterure.content.content.ContentScreen
 import com.example.mycustomviewsarchiterure.core.Communication
 import com.example.mycustomviewsarchiterure.core.Init
 

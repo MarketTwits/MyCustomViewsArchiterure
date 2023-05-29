@@ -1,9 +1,8 @@
-package com.example.mycustomviewsarchiterure.content.presentation
+package com.example.mycustomviewsarchiterure.content.content
 
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 
 interface NewsUi {

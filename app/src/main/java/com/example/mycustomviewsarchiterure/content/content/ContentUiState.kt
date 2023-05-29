@@ -1,6 +1,4 @@
-package com.example.mycustomviewsarchiterure.content.presentation
-
-import android.widget.RadioButton
+package com.example.mycustomviewsarchiterure.content.content
 
 interface ContentUiState {
 
